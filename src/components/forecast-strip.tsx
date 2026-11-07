@@ -10,7 +10,7 @@ export function ForecastStrip({ days }: { days: DayForecast[] }) {
   const best = bestDay(days).day.date;
 
   return (
-    <ol className="-mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-4 sm:overflow-visible sm:px-0 lg:grid-cols-7">
+    <ol className="-mx-4 flex snap-x scroll-px-4 gap-3 overflow-x-auto px-4 pb-3 pt-3 sm:mx-0 sm:grid sm:grid-cols-4 sm:overflow-visible sm:px-0 lg:grid-cols-7">
       {days.map((day, i) => {
         const score = scoreDay(day);
         const { label, kind } = describeWeather(day.weatherCode);

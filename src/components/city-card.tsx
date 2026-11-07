@@ -32,7 +32,7 @@ export async function CityCard({ city }: { city: FavoriteCity }) {
       </div>
       <p className="font-display text-5xl font-medium tabular-nums tracking-tight">
         {degrees(current.temperature)}
-        <span className="ml-1 text-base font-sans font-normal text-ink-soft">C</span>
+        <span className="font-sans text-base font-normal text-ink-soft">C</span>
       </p>
       <p className="-mt-1 text-sm text-ink-soft">
         {label} · máx {degrees(today.tempMax)} / mín {degrees(today.tempMin)}

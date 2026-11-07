@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FavoriteButton } from "@/components/favorite-button";
 import { ForecastStrip } from "@/components/forecast-strip";
-import { ScoreBadge } from "@/components/score-badge";
 import { WeatherIcon } from "@/components/weather-icon";
 import { degrees, flagOf, formatNumber, longDay, timeOf } from "@/lib/format";
 import { getCityById, getForecast } from "@/lib/open-meteo";
@@ -113,7 +112,7 @@ export default async function CiudadPage({ params }: PageProps<"/ciudad/[id]">) 
           <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-70">
             Mejor día para ir
           </p>
-          <p className="mt-1 font-display text-2xl font-medium capitalize sm:text-3xl">
+          <p className="mt-1 font-display text-2xl font-medium first-letter:uppercase sm:text-3xl">
             {longDay(best.day.date)}
           </p>
           <p className="mt-1 opacity-80">
@@ -121,11 +120,15 @@ export default async function CiudadPage({ params }: PageProps<"/ciudad/[id]">) 
             {best.day.precipitationProbability}% de lluvia
           </p>
         </div>
-        <div className="flex flex-col items-start gap-2 sm:items-end">
+        <div className="flex flex-col items-start gap-1 sm:items-end">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-70">
             Puntaje de la semana
           </p>
-          <ScoreBadge score={week} className="bg-paper text-ink! ring-0 text-sm" />
+          <p className="font-display text-5xl font-medium leading-none tabular-nums">
+            {week.value}
+            <span className="text-xl opacity-70">/100</span>
+          </p>
+          <p className="text-sm opacity-80">{week.label}</p>
         </div>
       </section>
 

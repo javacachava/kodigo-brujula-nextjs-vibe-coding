@@ -27,7 +27,7 @@ async function getJson<T>(url: URL): Promise<T> {
   }
   if (!res.ok) {
     throw new UpstreamError(
-      `El servicio del clima respondio ${res.status}`,
+      `El servicio del clima respondió ${res.status}`,
       res.status,
     );
   }
@@ -89,8 +89,14 @@ export async function getCityById(id: number): Promise<City | null> {
   try {
     return toCity(await getJson<RawCity>(url));
   } catch (error) {
-    // La API responde 404 cuando el id no existe: no es una falla del servicio.
-    if (error instanceof UpstreamError && error.status === 404) return null;
+    // Para un id inexistente la API responde 400 ("Location ID not found.");
+    // el id ya se valido como entero positivo, asi que no es una falla del servicio.
+    if (
+      error instanceof UpstreamError &&
+      (error.status === 400 || error.status === 404)
+    ) {
+      return null;
+    }
     throw error;
   }
 }
