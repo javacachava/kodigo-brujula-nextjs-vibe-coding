@@ -4,7 +4,8 @@ Aplicación web hecha con **Next.js 16 (App Router) + TypeScript + Tailwind CSS 
 
 Brújula compara el pronóstico de 7 días de cualquier ciudad del mundo y calcula un **puntaje de viaje de 0 a 100** por jornada para recomendar el mejor día para salir. Los destinos se pueden guardar en favoritos y compararse entre sí.
 
-- **Aplicación en producción:** _se agrega al desplegar (ver sección «Despliegue»)_
+- **Aplicación en producción:** https://brujula-sage.vercel.app
+- **Repositorio:** https://github.com/javacachava/kodigo-brujula-nextjs-vibe-coding
 - **Proceso de Vibe Coding:** [VIBE_CODING.md](./VIBE_CODING.md)
 
 ## Cumplimiento de los requisitos de la actividad
@@ -110,7 +111,7 @@ src/
 
 ## Despliegue
 
-Desplegado en Vercel. Para reproducirlo: importar el repositorio en Vercel (preset Next.js) y, opcionalmente, definir `NEXT_PUBLIC_SITE_URL` con el dominio asignado.
+Desplegado en Vercel (https://brujula-sage.vercel.app). Para reproducirlo: importar el repositorio en Vercel (preset Next.js) y, opcionalmente, definir `NEXT_PUBLIC_SITE_URL` con el dominio asignado.
 
 ## Créditos
 
